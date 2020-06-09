@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <!-- Using bootstrap as a reference stylesheet, we could customize it by overriding styles with our own stylesheet -->
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <title>Site Name - Login Page</title>
+        <script>
+            function validateLogin(){
+                var username = document.forms["login-form"].elements["usernameLogin"].value;
+                var password = document.forms["login-form"].elements["passwordLogin"].value;
+                if(username == "" || password == ""){
+                    document.getElementById("alert").innerHTML = "You have to fill in every item.";
+                    return false;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div id="login" class="post-block">
+            <p class="center" id="login-title">Log In</p>
+            <form action="http://www.randyconnolly.com/tests/process.php" method="post" name="login-form" onsubmit="return validateLogin()">
+                <p class="center"><label>Username: </label><input type="text" name="usernameLogin"></p>
+                <p class="center"><label>Password: </label><input type="password" name="passwordLogin"></p>
+                <p class="center"><input type="submit" class="button" value="Log in"></p>
+            </form>
+            <p class="center" id="alert"></p>
+        </div>
+    </body>
+</html>
